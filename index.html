@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Catch the Box 🎯</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: Arial;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    h1 {
+      color: white;
+      margin-top: 20px;
+      font-size: 32px;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    #box {
+      width: 90px;
+      height: 90px;
+      position: absolute;
+      border-radius: 18px;
+      cursor: pointer;
+      background: #222; /* default dark */
+      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+      transition: 0.15s;
+    }
+
+    #box:active {
+      transform: scale(0.9);
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Score: <span id="score">0</span></h1>
+<div id="box"></div>
+
+<script>
+let score = 0;
+
+const box = document.getElementById("box");
+const scoreText = document.getElementById("score");
+
+const safeTop = 100;
+
+function randomDarkColor() {
+  // darker, strong contrast colors
+  return `hsl(${Math.random()*360}, 70%, 35%)`;
+}
+
+function moveBox() {
+  const x = Math.random() * (window.innerWidth - 90);
+  const y = Math.random() * (window.innerHeight - 90 - safeTop) + safeTop;
+
+  box.style.left = x + "px";
+  box.style.top = y + "px";
+}
+
+box.onclick = () => {
+  score++;
+  scoreText.innerText = score;
+
+  box.style.background = randomDarkColor();
+  moveBox();
+};
+
+moveBox();
+</script>
+
+</body>
+</html>
