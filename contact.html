@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Don Norman – Contact</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      background-color: #ffffff;
+      color: #111111;
+    }
+
+    header {
+      background-color: #f2f6ff;
+      color: #0b2a5b;
+    }
+
+    nav {
+      background-color: #0b2a5b;
+    }
+
+    nav a {
+      color: #ffffff;
+    }
+
+    nav a[aria-current="page"] {
+      color: #ffdd57;
+    }
+
+    fieldset {
+      background-color: #f9f9f9;
+    }
+
+    legend {
+      color: #0b2a5b;
+      font-size: 18px;
+    }
+
+    label {
+      color: #111111;
+    }
+
+    button {
+      background-color: #0b2a5b;
+      color: #ffffff;
+      font-size: 16px;
+    }
+
+    footer {
+      background-color: #f2f6ff;
+      color: #0b2a5b;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Contact</h1>
+  </header>
+
+  <nav aria-label="Primary navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="contact.html" aria-current="page">Contact</a></li>
+      <li><a href="analysis.html">Interaction Analysis</a></li>
+      <li><a href="norman2klm.html">Norman–GOMS–KLM</a></li>
+      <li><a href="assignment01.html">Lab 01 Rules</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <form action="#" method="post">
+      <fieldset>
+        <legend>Send a Message</legend>
+
+        <label for="subject">Subject</label><br>
+        <input type="text" id="subject" name="subject"><br><br>
+
+        <label for="message">Message</label><br>
+        <textarea id="message" name="message" rows="5" cols="30"></textarea><br><br>
+
+        <button type="submit">Send</button>
+      </fieldset>
+    </form>
+  </main>
+
+  <footer>
+    <p>Keyboard accessible form with screen-reader friendly labels.</p>
+  </footer>
+
+</body>
+</html>

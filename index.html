@@ -1,78 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Catch the Box 🎯</title>
+  <meta charset="UTF-8">
+
+  <title>Don Norman – Home</title>
 
   <style>
     body {
-      margin: 0;
-      height: 100vh;
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-      font-family: Arial;
-      overflow: hidden;
-      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      background-color: #ffffff;
+      color: #111111;
     }
 
-    h1 {
-      color: white;
-      margin-top: 20px;
-      font-size: 32px;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    header {
+      background-color: #f2f6ff;
+      color: #0b2a5b;
     }
 
-    #box {
-      width: 90px;
-      height: 90px;
-      position: absolute;
-      border-radius: 18px;
-      cursor: pointer;
-      background: #222; /* default dark */
-      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
-      transition: 0.15s;
+    nav {
+      background-color: #0b2a5b;
     }
 
-    #box:active {
-      transform: scale(0.9);
+    nav a {
+      color: #ffffff;
+    }
+
+    nav a[aria-current="page"] {
+      color: #ffdd57;
+    }
+
+    h1, h2, h3 {
+      color: #0b2a5b;
+    }
+
+    .note-box {
+      background-color: #e7f3ff;
+    }
+
+    footer {
+      background-color: #f2f6ff;
+      color: #0b2a5b;
+      font-size: 14px;
     }
   </style>
 </head>
-
 <body>
 
-<h1>Score: <span id="score">0</span></h1>
-<div id="box"></div>
+  <header>
+    <h1>Don Norman – HCI Models</h1>
+    <p>
+      A semantic HTML practice website focused on Norman’s Action Cycle, GOMS, and KLM.
+    </p>
+  </header>
 
-<script>
-let score = 0;
+  <nav aria-label="Primary navigation">
+    <ul>
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="analysis.html">Interaction Analysis</a></li>
+      <li><a href="norman2klm.html">Norman–GOMS–KLM</a></li>
+      <li><a href="assignment01.html">Lab 01 Rules</a></li>
+    </ul>
+  </nav>
 
-const box = document.getElementById("box");
-const scoreText = document.getElementById("score");
+  <main>
 
-const safeTop = 100;
+    <section class="note-box">
+      <h2>Website Purpose</h2>
+      <p>
+        This site is designed to practice semantic HTML foundations and accessibility basics.
+        The content focuses on three core HCI analysis approaches:
+        Norman’s Action Cycle, GOMS, and the Keystroke-Level Model (KLM).
+      </p>
+    </section>
 
-function randomDarkColor() {
-  // darker, strong contrast colors
-  return `hsl(${Math.random()*360}, 70%, 35%)`;
-}
+    <section>
+      <h2>What You Will Find</h2>
+      <ul>
+        <li><strong>CV:</strong> A structured content page using semantic sections and articles.</li>
+        <li><strong>Contact:</strong> A keyboard accessible form with labels.</li>
+        <li><strong>Interaction Analysis:</strong> A comparison table for Norman vs GOMS.</li>
+        <li><strong>Norman–GOMS–KLM:</strong> A deeper comparison including KLM operators.</li>
+        <li><strong>Lab 01 Rules:</strong> The official constraints and requirements.</li>
+      </ul>
+    </section>
 
-function moveBox() {
-  const x = Math.random() * (window.innerWidth - 90);
-  const y = Math.random() * (window.innerHeight - 90 - safeTop) + safeTop;
+    <section>
+      <h2>Why Semantic HTML Matters</h2>
+      <p>
+        Semantic HTML improves clarity, maintainability, and accessibility. Screen readers can jump between
+        landmarks such as <code>nav</code> and <code>main</code>, and users benefit from consistent heading structure.
+      </p>
+    </section>
 
-  box.style.left = x + "px";
-  box.style.top = y + "px";
-}
+  </main>
 
-box.onclick = () => {
-  score++;
-  scoreText.innerText = score;
-
-  box.style.background = randomDarkColor();
-  moveBox();
-};
-
-moveBox();
-</script>
+  <footer>
+    <p>
+      Built for Lab &amp; Assignment 01: Semantic HTML Foundations.
+    </p>
+  </footer>
 
 </body>
 </html>
